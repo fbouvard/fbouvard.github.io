@@ -68,20 +68,34 @@
                 color: var(--muted);
             }
 
+            .store-link {
+                margin: 26px auto 0;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 0;
+            }
+
+            .store-badge {
+                height: 54px;
+                width: auto;
+                display: block;
+            }
+
             .carousel-wrap {
-                margin-top: 36px;
+                margin-top: 28px;
                 display: flex;
                 justify-content: center;
             }
 
             .review-bubble {
                 position: relative;
-                width: min(680px, 100%);
-                min-height: 170px;
-                border-radius: 34px;
+                width: min(560px, 100%);
+                min-height: 136px;
+                border-radius: 28px;
                 background: var(--bubble);
-                box-shadow: 0 18px 34px -15px var(--bubble-shadow);
-                padding: 24px 28px 34px;
+                box-shadow: 0 14px 26px -14px var(--bubble-shadow);
+                padding: 18px 22px 26px;
                 text-align: left;
                 transition:
                     opacity 260ms ease,
@@ -91,10 +105,10 @@
             .review-bubble::after {
                 content: "";
                 position: absolute;
-                left: 56px;
-                bottom: -22px;
-                width: 28px;
-                height: 22px;
+                left: 46px;
+                bottom: -18px;
+                width: 22px;
+                height: 18px;
                 background: var(--bubble);
                 clip-path: polygon(50% 100%, 0 0, 100% 0);
             }
@@ -106,22 +120,13 @@
 
             .review-header {
                 display: block;
-                margin-bottom: 14px;
-            }
-
-            .review-rating {
-                margin: 0 0 8px;
-                font-size: 0.9rem;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-                color: var(--muted);
-                font-weight: 700;
+                margin-bottom: 10px;
             }
 
             .stars {
                 position: relative;
                 display: inline-block;
-                font-size: 1.25rem;
+                font-size: 1.05rem;
                 line-height: 1;
             }
 
@@ -144,8 +149,8 @@
                 margin: 0;
                 font-family:
                     ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-                font-size: clamp(1.35rem, 4.8vw, 1.8rem);
-                line-height: 1.3;
+                font-size: clamp(1rem, 2.8vw, 1.2rem);
+                line-height: 1.28;
                 text-wrap: balance;
                 color: var(--review-text);
             }
@@ -160,20 +165,24 @@
 
             @media (max-width: 640px) {
                 .review-bubble {
-                    padding: 20px 20px 28px;
-                    border-radius: 26px;
-                    min-height: 160px;
+                    padding: 16px 16px 22px;
+                    border-radius: 22px;
+                    min-height: 136px;
                 }
 
                 .review-bubble::after {
-                    left: 36px;
-                    bottom: -18px;
-                    width: 24px;
-                    height: 18px;
+                    left: 28px;
+                    bottom: -15px;
+                    width: 19px;
+                    height: 15px;
                 }
 
                 .review-header {
-                    margin-bottom: 12px;
+                    margin-bottom: 9px;
+                }
+
+                .store-badge {
+                    height: 46px;
                 }
             }
         </style>
@@ -200,9 +209,6 @@
             <section class="carousel-wrap" aria-live="polite">
                 <article class="review-bubble entering" id="review-bubble">
                     <header class="review-header">
-                        <h2 class="review-rating" id="review-rating">
-                            5 stars
-                        </h2>
                         <div class="stars" aria-hidden="true">
                             <span class="stars-base">★★★★★</span>
                             <span class="stars-fill" id="stars-fill"
@@ -213,6 +219,28 @@
                     <p class="review-quote" id="review-quote"></p>
                 </article>
             </section>
+
+            <a
+                class="store-link"
+                href="https://apps.apple.com/app/id6748577579"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download Pinard on the App Store"
+            >
+                <picture>
+                    <source
+                        srcset="
+                            https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us
+                        "
+                        media="(prefers-color-scheme: dark)"
+                    />
+                    <img
+                        class="store-badge"
+                        src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
+                        alt="Download on the App Store"
+                    />
+                </picture>
+            </a>
         </main>
 
         <script>
@@ -228,12 +256,17 @@
                     quote: "Compared to my banking app, this is fun.",
                 },
                 { rating: 1, quote: "Does almost nothing." },
+                {
+                    rating: 1,
+                    quote: "I feel like the app is passive aggressive toward me.",
+                },
                 { rating: 5, quote: "This is absolutly genius!" },
                 {
                     rating: 5,
                     quote: "Makes wine cellar management great again.",
                 },
                 { rating: 1, quote: "French and pretentious." },
+                { rating: 4, quote: "Does what it says. Rude about it." },
                 { rating: 5, quote: "No funny business, solid app." },
                 { rating: 1, quote: "I bet this was vibe-coded." },
                 {
@@ -243,6 +276,50 @@
                 {
                     rating: 5,
                     quote: "My accountant loves it, my wife too, everybody.",
+                },
+                {
+                    rating: 5,
+                    quote: "Crashes less than my love life.",
+                },
+                {
+                    rating: 5,
+                    quote: "Finally an app that judges me silently.",
+                },
+                {
+                    rating: 5,
+                    quote: "UI is cute. So am I.",
+                },
+                {
+                    rating: 5,
+                    quote: "Downloaded by accident. Stayed for the chaos.",
+                },
+                {
+                    rating: 4,
+                    quote: "Glitches add personality.",
+                },
+                {
+                    rating: 5,
+                    quote: "Simple, clean, and mildly disrespectful.",
+                },
+                {
+                    rating: 4,
+                    quote: "Beautiful design, questionable morals.",
+                },
+                {
+                    rating: 3,
+                    quote: "The icon is the best part.",
+                },
+                {
+                    rating: 5,
+                    quote: "This apps has never sent me any notifications",
+                },
+                {
+                    rating: 4,
+                    quote: "Solid app. Would recommend to my enemies.",
+                },
+                {
+                    rating: 4,
+                    quote: "My drinking habits have spiralled out of control, thanks,",
                 },
             ];
 
@@ -257,7 +334,6 @@
 
             const queue = shuffle(reviews);
             const bubble = document.getElementById("review-bubble");
-            const ratingEl = document.getElementById("review-rating");
             const quoteEl = document.getElementById("review-quote");
             const starsFill = document.getElementById("stars-fill");
             let current = 0;
@@ -266,7 +342,6 @@
                 bubble.classList.add("entering");
 
                 window.setTimeout(() => {
-                    ratingEl.textContent = `${review.rating} stars`;
                     quoteEl.textContent = review.quote;
                     starsFill.style.width = `${(review.rating / 5) * 100}%`;
                     bubble.classList.remove("entering");
@@ -278,7 +353,7 @@
             window.setInterval(() => {
                 current = (current + 1) % queue.length;
                 showReview(queue[current]);
-            }, 4320);
+            }, 5760);
         </script>
     </body>
 </html>
