@@ -5,6 +5,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Pinard app</title>
         <style>
+            @font-face {
+                font-family: "iA Writer Quattro S";
+                src:
+                    url("fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
+                    url("fonts/iAWriterQuattroS-Regular.woff") format("woff");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "iA Writer Quattro S";
+                src:
+                    url("fonts/iAWriterQuattroS-Italic.woff2") format("woff2"),
+                    url("fonts/iAWriterQuattroS-Italic.woff") format("woff");
+                font-weight: 400;
+                font-style: italic;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "iA Writer Quattro S";
+                src:
+                    url("fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
+                    url("fonts/iAWriterQuattroS-Bold.woff") format("woff");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "iA Writer Quattro S";
+                src:
+                    url("fonts/iAWriterQuattroS-BoldItalic.woff2")
+                        format("woff2"),
+                    url("fonts/iAWriterQuattroS-BoldItalic.woff") format("woff");
+                font-weight: 700;
+                font-style: italic;
+                font-display: swap;
+            }
+
             :root {
                 --page-bg: #ffffff;
                 --ink: #1c2735;
@@ -35,10 +76,26 @@
                 display: grid;
                 place-items: center;
                 font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    "Helvetica Neue", Arial, sans-serif;
+                    "iA Writer Quattro S",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    "Helvetica Neue",
+                    Arial,
+                    sans-serif;
                 background: var(--page-bg);
                 color: var(--ink);
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family:
+                    ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
             }
 
             main {
@@ -60,6 +117,7 @@
                 margin: 22px 0 10px;
                 font-size: clamp(2rem, 6vw, 3.25rem);
                 letter-spacing: 0.02em;
+                font-weight: 400;
             }
 
             .tagline {
@@ -86,6 +144,41 @@
                 margin-top: 28px;
                 display: flex;
                 justify-content: center;
+            }
+
+            .manifesto {
+                margin: 34px auto 0;
+                width: min(560px, 100%);
+                text-align: left;
+            }
+
+            .manifesto-title {
+                margin: 0 0 10px;
+                font-size: clamp(1.35rem, 3.2vw, 1.7rem);
+                font-weight: 400;
+            }
+
+            h3.manifesto-title {
+                font-size: clamp(1.08rem, 2.4vw, 1.3rem);
+            }
+
+            .manifesto-text {
+                margin: 0 0 14px;
+                color: var(--muted);
+                font-size: clamp(1rem, 2.6vw, 1.1rem);
+                line-height: 1.55;
+            }
+
+            .manifesto-list {
+                margin: 0 0 14px 1.2em;
+                padding: 0;
+                color: var(--muted);
+                font-size: clamp(1rem, 2.6vw, 1.1rem);
+                line-height: 1.55;
+            }
+
+            .manifesto-list li {
+                margin-bottom: 8px;
             }
 
             .review-bubble {
@@ -147,10 +240,9 @@
 
             .review-quote {
                 margin: 0;
-                font-family:
-                    ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
                 font-size: clamp(1rem, 2.8vw, 1.2rem);
                 line-height: 1.28;
+                font-style: italic;
                 text-wrap: balance;
                 color: var(--review-text);
             }
@@ -161,6 +253,18 @@
                 height: 6px;
                 border-radius: 999px;
                 background: linear-gradient(90deg, #d8dfe9 0%, #eef2f8 100%);
+            }
+
+            .site-footer {
+                margin-top: 34px;
+                color: var(--muted);
+                font-size: 0.92rem;
+                line-height: 1.45;
+            }
+
+            .site-footer a {
+                color: inherit;
+                text-underline-offset: 0.14em;
             }
 
             @media (max-width: 640px) {
@@ -203,22 +307,9 @@
 
             <h1>Pinard</h1>
             <p class="tagline">
-                The most devisive wine cellar app management on the market
+                A reliable wine cellar planner that helps you decide what bottle
+                to drink, where to store it, and what to buy next.
             </p>
-
-            <section class="carousel-wrap" aria-live="polite">
-                <article class="review-bubble entering" id="review-bubble">
-                    <header class="review-header">
-                        <div class="stars" aria-hidden="true">
-                            <span class="stars-base">★★★★★</span>
-                            <span class="stars-fill" id="stars-fill"
-                                >★★★★★</span
-                            >
-                        </div>
-                    </header>
-                    <p class="review-quote" id="review-quote"></p>
-                </article>
-            </section>
 
             <a
                 class="store-link"
@@ -241,6 +332,49 @@
                     />
                 </picture>
             </a>
+
+            <section class="manifesto" aria-label="Manifesto">
+                <h2 class="manifesto-title">Peak drinking window</h2>
+                <p class="manifesto-text">This is a</p>
+                <h2 class="manifesto-title">Notebook</h2>
+                <p class="manifesto-text">
+                    Every wine enthousiast keep notes or all sorts and journal
+                    their experiences. In Pinard, each wine has it's own
+                    notebook that can hold any information and dated entries.
+                    Links to related webpages are automatically surfaced from
+                    quick access.
+                </p>
+                <h2 class="manifesto-title">Location</h2>
+                <p class="manifesto-text">
+                    It's very easy to locate your wine. Pinard supports multi
+                    cellars and a spacial localization hints to help you quickly
+                    find what you are looking for in the real world.
+                </p>
+            </section>
+
+            <section class="carousel-wrap" aria-live="polite">
+                <article class="review-bubble entering" id="review-bubble">
+                    <header class="review-header">
+                        <div class="stars" aria-hidden="true">
+                            <span class="stars-base">★★★★★</span>
+                            <span class="stars-fill" id="stars-fill"
+                                >★★★★★</span
+                            >
+                        </div>
+                    </header>
+                    <p class="review-quote" id="review-quote"></p>
+                </article>
+            </section>
+
+            <footer class="site-footer">
+                Font used on this website comes from
+                <a
+                    href="https://ia.net/topics/a-typographic-christmas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >iA Writer</a
+                >.
+            </footer>
         </main>
 
         <script>
