@@ -4,128 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Pinard app</title>
+        <link rel="stylesheet" href="styles.css" />
         <style>
-            @font-face {
-                font-family: "iA Writer Quattro S";
-                src:
-                    url("fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
-                    url("fonts/iAWriterQuattroS-Regular.woff") format("woff");
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-            }
-
-            @font-face {
-                font-family: "iA Writer Quattro S";
-                src:
-                    url("fonts/iAWriterQuattroS-Italic.woff2") format("woff2"),
-                    url("fonts/iAWriterQuattroS-Italic.woff") format("woff");
-                font-weight: 400;
-                font-style: italic;
-                font-display: swap;
-            }
-
-            @font-face {
-                font-family: "iA Writer Quattro S";
-                src:
-                    url("fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
-                    url("fonts/iAWriterQuattroS-Bold.woff") format("woff");
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
-            }
-
-            @font-face {
-                font-family: "iA Writer Quattro S";
-                src:
-                    url("fonts/iAWriterQuattroS-BoldItalic.woff2")
-                        format("woff2"),
-                    url("fonts/iAWriterQuattroS-BoldItalic.woff") format("woff");
-                font-weight: 700;
-                font-style: italic;
-                font-display: swap;
-            }
-
-            :root {
-                --page-bg: #ffffff;
-                --ink: #1c2735;
-                --muted: #5d6a79;
-                --bubble: #fffbea;
-                --review-text: #000000;
-                --bubble-shadow: rgba(16, 36, 56, 0.23);
-                --gold: #f2bb05;
-            }
-
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --page-bg: #000000;
-                    --ink: #f3efe4;
-                    --muted: #ddd5c2;
-                    --bubble: #2e2a1b;
-                    --review-text: #ffffff;
-                }
-            }
-
-            * {
-                box-sizing: border-box;
-            }
-
-            body {
-                margin: 0;
-                min-height: 100vh;
-                display: grid;
-                place-items: center;
-                font-family:
-                    "iA Writer Quattro S",
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    "Helvetica Neue",
-                    Arial,
-                    sans-serif;
-                background: var(--page-bg);
-                color: var(--ink);
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-family:
-                    ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-            }
-
-            main {
-                width: min(760px, 92vw);
-                padding: 52px 20px 44px;
-                text-align: center;
-            }
-
-            .app-icon {
-                width: min(42vw, 240px);
-                max-width: 240px;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                filter: drop-shadow(0 18px 24px rgba(15, 29, 45, 0.28));
-            }
-
-            h1 {
-                margin: 22px 0 10px;
-                font-size: clamp(2rem, 6vw, 3.25rem);
-                letter-spacing: 0.02em;
-                font-weight: 400;
-            }
-
-            .tagline {
-                margin: 0;
-                font-size: clamp(1rem, 2.8vw, 1.2rem);
-                color: var(--muted);
-            }
-
             .store-link {
                 margin: 26px auto 0;
                 display: inline-flex;
@@ -144,12 +24,6 @@
                 margin-top: 28px;
                 display: flex;
                 justify-content: center;
-            }
-
-            .manifesto {
-                margin: 34px auto 0;
-                width: min(560px, 100%);
-                text-align: left;
             }
 
             .manifesto-title {
@@ -242,9 +116,12 @@
                 margin: 0;
                 font-size: clamp(1rem, 2.8vw, 1.2rem);
                 line-height: 1.28;
-                font-style: italic;
                 text-wrap: balance;
                 color: var(--review-text);
+            }
+
+            .review-quote-text {
+                font-style: italic;
             }
 
             .review-line {
@@ -253,18 +130,6 @@
                 height: 6px;
                 border-radius: 999px;
                 background: linear-gradient(90deg, #d8dfe9 0%, #eef2f8 100%);
-            }
-
-            .site-footer {
-                margin-top: 34px;
-                color: var(--muted);
-                font-size: 0.92rem;
-                line-height: 1.45;
-            }
-
-            .site-footer a {
-                color: inherit;
-                text-underline-offset: 0.14em;
             }
 
             @media (max-width: 640px) {
@@ -333,7 +198,7 @@
                 </picture>
             </a>
 
-            <section class="manifesto" aria-label="Manifesto">
+            <section class="manifesto content-column" aria-label="Manifesto">
                 <h2 class="manifesto-title">Peak drinking window</h2>
                 <p class="manifesto-text">
                     Pinard helps you track the peak drinking window of your
@@ -363,11 +228,18 @@
                             >
                         </div>
                     </header>
-                    <p class="review-quote" id="review-quote"></p>
+                    <p class="review-quote">
+                        <span
+                            class="review-quote-text"
+                            id="review-quote"
+                        ></span>
+                    </p>
                 </article>
             </section>
 
             <footer class="site-footer">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <br />
                 Font used on this website comes from
                 <a
                     href="https://ia.net/topics/a-typographic-christmas"
@@ -375,7 +247,8 @@
                     rel="noopener noreferrer"
                     >iA Writer</a
                 >.
-                <a href="privacy-policy.html">Privacy Policy</a>
+                <br />
+                🏌
             </footer>
         </main>
 
