@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Pinard app</title>
-        <link rel="stylesheet" href="styles.css" />
+        <title>Pernolay app</title>
+        <link rel="stylesheet" href="styles.css?v=3" />
         <style>
             .store-link {
                 margin: 26px auto 0;
@@ -20,136 +20,28 @@
                 display: block;
             }
 
-            .carousel-wrap {
-                margin-top: 28px;
-                display: flex;
-                justify-content: center;
+            .screenshots {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 16px;
+                margin: 34px auto 0;
+                overflow-x: auto;
             }
 
-            .manifesto-title {
-                margin: 0 0 10px;
-                font-size: clamp(1.35rem, 3.2vw, 1.7rem);
-                font-weight: 400;
-            }
-
-            h3.manifesto-title {
-                font-size: clamp(1.08rem, 2.4vw, 1.3rem);
-            }
-
-            .manifesto-text {
-                margin: 0 0 14px;
-                color: var(--muted);
-                font-size: clamp(1rem, 2.6vw, 1.1rem);
-                line-height: 1.55;
-            }
-
-            .manifesto-list {
-                margin: 0 0 14px 1.2em;
-                padding: 0;
-                color: var(--muted);
-                font-size: clamp(1rem, 2.6vw, 1.1rem);
-                line-height: 1.55;
-            }
-
-            .manifesto-list li {
-                margin-bottom: 8px;
-            }
-
-            .review-bubble {
-                position: relative;
-                width: min(560px, 100%);
-                min-height: 136px;
-                border-radius: 28px;
-                background: var(--bubble);
-                box-shadow: 0 14px 26px -14px var(--bubble-shadow);
-                padding: 18px 22px 26px;
-                text-align: left;
-                transition:
-                    opacity 260ms ease,
-                    transform 260ms ease;
-            }
-
-            .review-bubble::after {
-                content: "";
-                position: absolute;
-                left: 46px;
-                bottom: -18px;
-                width: 22px;
-                height: 18px;
-                background: var(--bubble);
-                clip-path: polygon(50% 100%, 0 0, 100% 0);
-            }
-
-            .review-bubble.entering {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            .review-header {
+            .screenshots img {
                 display: block;
-                margin-bottom: 10px;
-            }
-
-            .stars {
-                position: relative;
-                display: inline-block;
-                font-size: 1.05rem;
-                line-height: 1;
-            }
-
-            .stars-base {
-                color: #d5dde8;
-                letter-spacing: 0.14em;
-            }
-
-            .stars-fill {
-                position: absolute;
-                left: 0;
-                top: 0;
-                color: var(--gold);
-                white-space: nowrap;
-                overflow: hidden;
-                letter-spacing: 0.14em;
-            }
-
-            .review-quote {
-                margin: 0;
-                font-size: clamp(1rem, 2.8vw, 1.2rem);
-                line-height: 1.28;
-                text-wrap: balance;
-                color: var(--review-text);
-            }
-
-            .review-quote-text {
-                font-style: italic;
-            }
-
-            .review-line {
-                margin-top: 16px;
-                width: min(58%, 380px);
-                height: 6px;
-                border-radius: 999px;
-                background: linear-gradient(90deg, #d8dfe9 0%, #eef2f8 100%);
+                width: 100%;
+                height: auto;
             }
 
             @media (max-width: 640px) {
-                .review-bubble {
-                    padding: 16px 16px 22px;
-                    border-radius: 22px;
-                    min-height: 136px;
+                .screenshots {
+                    grid-template-columns: repeat(3, minmax(240px, 1fr));
+                    padding-bottom: 12px;
                 }
+            }
 
-                .review-bubble::after {
-                    left: 28px;
-                    bottom: -15px;
-                    width: 19px;
-                    height: 15px;
-                }
-
-                .review-header {
-                    margin-bottom: 9px;
-                }
-
+            @media (max-width: 640px) {
                 .store-badge {
                     height: 46px;
                 }
@@ -158,22 +50,15 @@
     </head>
     <body>
         <main>
-            <picture>
-                <source
-                    srcset="icon-dark.png"
-                    media="(prefers-color-scheme: dark)"
-                />
-                <img
-                    class="app-icon"
-                    src="icon-default.png"
-                    alt="Pinard app icon"
-                />
-            </picture>
+            <img
+                class="app-icon"
+                src="icon-cork.png"
+                alt="Pernolay app icon"
+            />
 
-            <h1>Pinard</h1>
+            <h1>Pernolay</h1>
             <p class="tagline">
-                A reliable wine cellar planner that helps you decide what bottle
-                to drink, where to store it, and what to buy next.
+                Think of how much money and enjoyment are lost through poor wine cellar management. Pernolay is a no-nonsense analytical tool that helps you get the most out of your collection.
             </p>
 
             <a
@@ -181,7 +66,7 @@
                 href="https://apps.apple.com/app/id6748577579"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Download Pinard on the App Store"
+                aria-label="Download Pernolay on the App Store"
             >
                 <picture>
                     <source
@@ -198,179 +83,51 @@
                 </picture>
             </a>
 
-            <section class="manifesto content-column" aria-label="Manifesto">
-                <h2 class="manifesto-title">Peak drinking window</h2>
-                <p class="manifesto-text">
-                    Pinard helps you track the peak drinking window of your
-                    wines so you can drink them at their best.
-                </p>
-                <h2 class="manifesto-title">Notebook</h2>
-                <p class="manifesto-text">
-                    Each wine in your collection has its notebook in Pinard to
-                    store information and tasting notes. Tags and URLs are
-                    automatically surfaced for quick access.
-                </p>
-                <h2 class="manifesto-title">Location</h2>
-                <p class="manifesto-text">
-                    Pinard supports multiple cellars and a straightforward
-                    location helper to help you quickly locate your wine
-                    bottles.
-                </p>
-            </section>
-
-            <section class="carousel-wrap" aria-live="polite">
-                <article class="review-bubble entering" id="review-bubble">
-                    <header class="review-header">
-                        <div class="stars" aria-hidden="true">
-                            <span class="stars-base">★★★★★</span>
-                            <span class="stars-fill" id="stars-fill"
-                                >★★★★★</span
-                            >
-                        </div>
-                    </header>
-                    <p class="review-quote">
-                        <span
-                            class="review-quote-text"
-                            id="review-quote"
-                        ></span>
-                    </p>
-                </article>
+            <section class="screenshots" aria-label="Pernolay app screenshots">
+                <picture>
+                    <source
+                        srcset="screenshots/cellar-dark.png"
+                        media="(prefers-color-scheme: dark)"
+                    />
+                    <img
+                        src="screenshots/cellar.png"
+                        alt="Pernolay Cellar showing wine inventory and drinking windows"
+                        width="1318"
+                        height="2717"
+                        loading="lazy"
+                    />
+                </picture>
+                <picture>
+                    <source
+                        srcset="screenshots/journal-dark.png"
+                        media="(prefers-color-scheme: dark)"
+                    />
+                    <img
+                        src="screenshots/journal.png"
+                        alt="Pernolay Journal showing wines enjoyed and tasting notes"
+                        width="1318"
+                        height="2717"
+                        loading="lazy"
+                    />
+                </picture>
+                <picture>
+                    <source
+                        srcset="screenshots/planner-dark.png"
+                        media="(prefers-color-scheme: dark)"
+                    />
+                    <img
+                        src="screenshots/planner.png"
+                        alt="Pernolay Planner showing cellar stock and wine maturity forecasts"
+                        width="1318"
+                        height="2717"
+                        loading="lazy"
+                    />
+                </picture>
             </section>
 
             <footer class="site-footer">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <br />
-                The font used on this website comes from
-                <a
-                    href="https://ia.net/topics/a-typographic-christmas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >iA Writer</a
-                >.
-                <br />
-                🏌
+                <a href="privacy-policy.html">Privacy</a>
             </footer>
         </main>
-
-        <script>
-            const reviews = [
-                {
-                    rating: 5,
-                    quote: "Ros\u00E9 is not real wine and Pinard makes a courageous stand.",
-                },
-                { rating: 5, quote: "The missing iOS stock app." },
-                { rating: 1, quote: "Looks like nothing" },
-                {
-                    rating: 5,
-                    quote: "Compared to my banking app, this is fun.",
-                },
-                { rating: 1, quote: "Does almost nothing." },
-                {
-                    rating: 1,
-                    quote: "I feel like the app is passive aggressive toward me.",
-                },
-                { rating: 5, quote: "This is absolutely genius!" },
-                {
-                    rating: 5,
-                    quote: "Makes wine cellar management great again.",
-                },
-                { rating: 1, quote: "French and pretentious." },
-                { rating: 4, quote: "Does what it says. Rude about it." },
-                { rating: 5, quote: "No funny business, solid app." },
-                { rating: 1, quote: "I bet this was vibe-coded." },
-                {
-                    rating: 2.5,
-                    quote: "I\u2019m too.. *hip*... drunk to review this app...",
-                },
-                {
-                    rating: 5,
-                    quote: "My accountant loves it, my wife too, everybody.",
-                },
-                {
-                    rating: 5,
-                    quote: "Crashes less than my love life.",
-                },
-                {
-                    rating: 5,
-                    quote: "Finally an app that judges me silently.",
-                },
-                {
-                    rating: 5,
-                    quote: "UI is cute. So am I.",
-                },
-                {
-                    rating: 5,
-                    quote: "Not a single hamburger menu. Respect.",
-                },
-                {
-                    rating: 5,
-                    quote: "Downloaded by accident. Stayed for the chaos.",
-                },
-                {
-                    rating: 4,
-                    quote: "Glitches add personality.",
-                },
-                {
-                    rating: 5,
-                    quote: "Simple, clean, and mildly disrespectful.",
-                },
-                {
-                    rating: 4,
-                    quote: "Beautiful design, questionable morals.",
-                },
-                {
-                    rating: 3,
-                    quote: "The icon is the best part.",
-                },
-                {
-                    rating: 5,
-                    quote: "This app has never sent me any notifications.",
-                },
-                {
-                    rating: 5,
-                    quote: "Never begged me to rate it on the App Store",
-                },
-                {
-                    rating: 4,
-                    quote: "Solid app. Would recommend to my enemies.",
-                },
-                {
-                    rating: 4,
-                    quote: "My drinking habits have spiralled out of control, thanks.",
-                },
-            ];
-
-            function shuffle(list) {
-                const result = [...list];
-                for (let i = result.length - 1; i > 0; i -= 1) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [result[i], result[j]] = [result[j], result[i]];
-                }
-                return result;
-            }
-
-            const queue = shuffle(reviews);
-            const bubble = document.getElementById("review-bubble");
-            const quoteEl = document.getElementById("review-quote");
-            const starsFill = document.getElementById("stars-fill");
-            let current = 0;
-
-            function showReview(review) {
-                bubble.classList.add("entering");
-
-                window.setTimeout(() => {
-                    quoteEl.textContent = review.quote;
-                    starsFill.style.width = `${(review.rating / 5) * 100}%`;
-                    bubble.classList.remove("entering");
-                }, 150);
-            }
-
-            showReview(queue[current]);
-
-            window.setInterval(() => {
-                current = (current + 1) % queue.length;
-                showReview(queue[current]);
-            }, 5760);
-        </script>
     </body>
 </html>
