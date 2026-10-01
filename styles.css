@@ -1,51 +1,7 @@
-@font-face {
-    font-family: "iA Writer Quattro S";
-    src:
-        url("fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
-        url("fonts/iAWriterQuattroS-Regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "iA Writer Quattro S";
-    src:
-        url("fonts/iAWriterQuattroS-Italic.woff2") format("woff2"),
-        url("fonts/iAWriterQuattroS-Italic.woff") format("woff");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "iA Writer Quattro S";
-    src:
-        url("fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
-        url("fonts/iAWriterQuattroS-Bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "iA Writer Quattro S";
-    src:
-        url("fonts/iAWriterQuattroS-BoldItalic.woff2") format("woff2"),
-        url("fonts/iAWriterQuattroS-BoldItalic.woff") format("woff");
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-}
-
 :root {
     --page-bg: #ffffff;
     --ink: #1c2735;
     --muted: #5d6a79;
-    --bubble: #fffbea;
-    --review-text: #000000;
-    --bubble-shadow: rgba(16, 36, 56, 0.23);
-    --gold: #f2bb05;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,8 +9,6 @@
         --page-bg: #000000;
         --ink: #f3efe4;
         --muted: #ddd5c2;
-        --bubble: #2e2a1b;
-        --review-text: #ffffff;
     }
 }
 
@@ -68,25 +22,14 @@ body {
     display: grid;
     place-items: center;
     font-family:
-        "iA Writer Quattro S",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+        ui-serif,
+        Georgia,
+        Cambria,
+        "Times New Roman",
+        Times,
+        serif;
     background: var(--page-bg);
     color: var(--ink);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 main {
