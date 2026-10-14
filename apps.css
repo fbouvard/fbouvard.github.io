@@ -51,7 +51,8 @@
 
 .watch-screenshots {
     margin-top: 42px;
-    gap: 24px;
+    gap: 32px;
+    padding: 0 12px;
     overflow: visible;
 }
 
@@ -60,8 +61,42 @@
     margin: 0;
 }
 
-.watch-screenshots img {
+.watch-case {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 560 / 880;
+    isolation: isolate;
+}
+
+.watch-case::before {
+    content: "";
+    position: absolute;
+    left: 8.9%;
+    top: 21.6%;
+    width: 82.2%;
+    height: 58%;
+    border-radius: 24% / 20%;
+    background: #000;
+    z-index: -2;
+}
+
+.watch-case::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("gonglitea/watch-frame.png") center / contain no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.watch-screenshots .watch-case img {
+    position: absolute;
+    left: 12.857143%;
+    top: 22.727273%;
+    width: 74.285714%;
+    height: auto;
     border-radius: 20%;
+    background: #000;
 }
 
 .watch-screenshots figcaption {
@@ -77,6 +112,13 @@
     color: var(--ink);
     font-size: 1.05rem;
     font-weight: 400;
+}
+
+.watch-screenshots figcaption ol {
+    width: fit-content;
+    margin: 0 auto;
+    padding-left: 1.5em;
+    text-align: left;
 }
 
 @media (max-width: 640px) {
