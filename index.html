@@ -3,131 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Pernolay app</title>
-        <link rel="stylesheet" href="styles.css?v=3" />
-        <style>
-            .store-link {
-                margin: 26px auto 0;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                line-height: 0;
-            }
-
-            .store-badge {
-                height: 54px;
-                width: auto;
-                display: block;
-            }
-
-            .screenshots {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 16px;
-                margin: 34px auto 0;
-                overflow-x: auto;
-            }
-
-            .screenshots img {
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-
-            @media (max-width: 640px) {
-                .screenshots {
-                    grid-template-columns: repeat(3, minmax(240px, 1fr));
-                    padding-bottom: 12px;
-                }
-            }
-
-            @media (max-width: 640px) {
-                .store-badge {
-                    height: 46px;
-                }
-            }
-        </style>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="François Bouvard. Find me on LinkedIn, or explore my apps Pernolay and Gonglitea." />
+        <title>François Bouvard</title>
+        <link rel="stylesheet" href="styles.css?v=4" />
     </head>
     <body>
-        <main>
-            <img
-                class="app-icon"
-                src="icon-cork.png"
-                alt="Pernolay app icon"
-            />
-
-            <h1>Pernolay</h1>
-            <p class="tagline">
-                Think of how much money and enjoyment are lost through poor wine cellar management. Pernolay is a no-nonsense analytical tool that helps you get the most out of your collection.
-            </p>
-
-            <a
-                class="store-link"
-                href="https://apps.apple.com/app/id6748577579"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download Pernolay on the App Store"
-            >
-                <picture>
-                    <source
-                        srcset="
-                            https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us
-                        "
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        class="store-badge"
-                        src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us"
-                        alt="Download on the App Store"
-                    />
-                </picture>
-            </a>
-
-            <section class="screenshots" aria-label="Pernolay app screenshots">
-                <picture>
-                    <source
-                        srcset="screenshots/cellar-dark.png"
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        src="screenshots/cellar.png"
-                        alt="Pernolay Cellar showing wine inventory and drinking windows"
-                        width="1318"
-                        height="2717"
-                        loading="lazy"
-                    />
-                </picture>
-                <picture>
-                    <source
-                        srcset="screenshots/journal-dark.png"
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        src="screenshots/journal.png"
-                        alt="Pernolay Journal showing wines enjoyed and tasting notes"
-                        width="1318"
-                        height="2717"
-                        loading="lazy"
-                    />
-                </picture>
-                <picture>
-                    <source
-                        srcset="screenshots/planner-dark.png"
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        src="screenshots/planner.png"
-                        alt="Pernolay Planner showing cellar stock and wine maturity forecasts"
-                        width="1318"
-                        height="2717"
-                        loading="lazy"
-                    />
-                </picture>
-            </section>
-
-            <footer class="site-footer">
-                <a href="privacy-policy.html">Privacy</a>
-            </footer>
+        <main class="home-page">
+            <h1>François Bouvard</h1>
+            <nav class="home-links" aria-label="Links">
+                <a href="https://www.linkedin.com/in/fcb">LinkedIn</a>
+                <a href="pernolay/">Pernolay</a>
+                <a href="gonglitea/">Gonglitea</a>
+            </nav>
         </main>
     </body>
 </html>

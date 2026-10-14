@@ -1,0 +1,97 @@
+.back-link {
+    margin: 0 0 38px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.back-link a {
+    display: inline-block;
+    padding: 10px 4px;
+}
+
+.store-link {
+    margin: 26px auto 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+.store-badge {
+    height: 54px;
+    width: auto;
+    display: block;
+}
+
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 34px auto 0;
+    overflow-x: auto;
+}
+
+.screenshots img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.platform {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.release-status {
+    margin: 26px 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.watch-screenshots {
+    margin-top: 42px;
+    gap: 24px;
+    overflow: visible;
+}
+
+.watch-screenshots figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.watch-screenshots img {
+    border-radius: 20%;
+}
+
+.watch-screenshots figcaption {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.watch-screenshots figcaption strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+@media (max-width: 640px) {
+    .store-badge {
+        height: 46px;
+    }
+
+    .screenshots {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+        padding-bottom: 12px;
+    }
+
+    .watch-screenshots {
+        grid-template-columns: minmax(0, 280px);
+        justify-content: center;
+        gap: 34px;
+    }
+}
