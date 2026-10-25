@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "pernolay",
+    "name": "Pernolay",
+    "icon": { "src": "icon-cork.png", "width": 1247, "height": 1261 },
+    "tagline": "Think of how much money and enjoyment are lost through poor wine cellar management. Pernolay is an opinionated, no-nonsense, analytical tool that helps you get the most out of your collection.",
+    "app_store_url": "https://apps.apple.com/app/id6748577579",
+    "pages": {
+      "overview": {
+        "description": "Pernolay helps you manage your wine cellar, record tasting notes, and plan when to enjoy your collection."
+      },
+      "support": {
+        "description": "Learn how to add a wine, research peak drinking windows, check device support, and contact Pernolay."
+      },
+      "privacy": {
+        "description": "How Pernolay handles your wine cellar and app data."
+      }
+    }
+  },
+  {
+    "slug": "gonglitea",
+    "name": "Gonglitea",
+    "icon": { "src": "icon.png", "width": 1088, "height": 1088 },
+    "tagline": "Gong fu brewing timer, mathematically correct.",
+    "release_status": "Coming soon to the App Store.",
+    "pages": {
+      "overview": {
+        "description": "Gonglitea is a gong fu tea timer for Apple Watch. Time successive steeps, adjust each brew, and return to your tea session whenever you like.",
+        "stylesheets": ["steep-explorer.css?v=3"],
+        "scripts": ["steep-explorer.js?v=1"]
+      },
+      "support": {
+        "description": "Contact Gonglitea for questions, feedback, or just to say hi."
+      },
+      "privacy": {
+        "description": "How Gonglitea handles your tea sessions and app data."
+      }
+    }
+  }
+]

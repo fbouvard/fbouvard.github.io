@@ -14,11 +14,29 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "iA Writer Quattro";
+    src: url("fonts/iAWriterQuattroS-Italic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "iA Writer Quattro";
+    src: url("fonts/iAWriterQuattroS-BoldItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+}
+
 :root {
     color-scheme: light dark;
     --page-bg: #ffffff;
     --ink: #1c2735;
     --muted: #5d6a79;
+    --card-border: #dce0e5;
+    --card-hover: #f5f6f8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +44,8 @@
         --page-bg: #000000;
         --ink: #f3efe4;
         --muted: #ddd5c2;
+        --card-border: #363636;
+        --card-hover: #141414;
     }
 }
 
@@ -38,15 +58,16 @@ body {
     min-height: 100vh;
     display: grid;
     place-items: center;
-    font-family:
-        ui-serif,
-        Georgia,
-        Cambria,
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "iA Writer Quattro", monospace;
     background: var(--page-bg);
     color: var(--ink);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
 main {
@@ -102,7 +123,6 @@ a:focus-visible {
 .home-page {
     width: min(820px, 100%);
     padding: 64px 24px;
-    font-family: "iA Writer Quattro", monospace;
     text-align: left;
 }
 
@@ -121,28 +141,54 @@ a:focus-visible {
 .home-apps h2 {
     margin: 0 0 12px;
     font-size: 1.125rem;
-    font-weight: 700;
+    font-weight: 400;
 }
 
-.home-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    color: var(--muted);
-    font-size: 1.1rem;
-}
-
-.home-links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-}
-
-.home-links ul {
+.app-cards {
+    display: grid;
+    gap: 12px;
     margin: 0;
-    padding-left: 1.5em;
-    list-style: disc;
+    padding: 0;
+    list-style: none;
+}
+
+.app-card {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+.app-card:hover {
+    background: var(--card-hover);
+}
+
+.app-card:focus-visible {
+    border-radius: 12px;
+}
+
+.app-card img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.app-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+.app-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
 }
 
 .site-footer {
@@ -155,5 +201,10 @@ a:focus-visible {
 @media (max-width: 640px) {
     main {
         padding: 42px 20px 36px;
+    }
+
+    .app-card {
+        gap: 14px;
+        padding: 16px;
     }
 }

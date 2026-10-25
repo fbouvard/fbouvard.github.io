@@ -1,7 +1,4 @@
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
+.policy .updated,
 .policy p {
     margin: 0 0 14px;
     color: var(--muted);
@@ -14,4 +11,12 @@ body {
     color: var(--ink);
     font-size: clamp(1.35rem, 3.2vw, 1.7rem);
     font-weight: 400;
+}
+
+.policy-section h2 {
+    margin-top: 0;
+}
+
+.policy-section + .policy-section {
+    margin-top: 26px;
 }
