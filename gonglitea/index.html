@@ -8,7 +8,7 @@
         <meta name="description" content="Gonglitea is a gong fu tea timer for Apple Watch. Time successive steeps, adjust each brew, and return to your tea session whenever you like." />
         <title>Gonglitea — Squeaky Systems</title>
         <link rel="stylesheet" href="../styles.css?v=10" />
-        <link rel="stylesheet" href="../apps.css?v=23" />
+        <link rel="stylesheet" href="../apps.css?v=25" />
         <link rel="stylesheet" href="steep-explorer.css?v=3" />
         <script src="steep-explorer.js?v=1" defer></script>
         <script src="../site.js?v=3" defer></script>
@@ -39,22 +39,43 @@
             <!-- App Store Connect ID: 6818762609. Version 1.0 is in Prepare for Submission.
                  Add the download badge after release: https://apps.apple.com/app/id6818762609 -->
 
-            <section class="screenshots watch-screenshots" aria-label="Gonglitea app screenshots">
-                <figure>
-                    <div class="watch-case">
-                        <img src="screenshots/start-session.png" alt="Gonglitea start screen with brewing time and offset selectors" width="416" height="496" loading="lazy" />
+            <section class="app-features gonglitea-features" aria-label="Gonglitea features">
+                <article class="app-feature-card">
+                    <a class="app-feature-image" href="screenshots/start.png" target="_blank" rel="noopener noreferrer" aria-label="View full resolution: Start" title="View full resolution">
+                        <img src="screenshots/start.png" alt="Gonglitea start screen with brewing time and offset selectors" width="416" height="496" loading="lazy" />
+                    </a>
+                    <div class="app-feature-copy">
+                        <h2>Start</h2>
+                        <p>Set the first brew time and additional time for the next one.</p>
                     </div>
-                </figure>
-                <figure>
-                    <div class="watch-case">
-                        <img src="screenshots/brewing.png" alt="Gonglitea countdown with a curve showing successive brewing times" width="416" height="496" loading="lazy" />
+                </article>
+                <article class="app-feature-card">
+                    <a class="app-feature-image" href="screenshots/brew.png" target="_blank" rel="noopener noreferrer" aria-label="View full resolution: Brew" title="View full resolution">
+                        <img src="screenshots/brew.png" alt="Gonglitea brewing screen with the computed timing curve and countdown" width="416" height="496" loading="lazy" />
+                    </a>
+                    <div class="app-feature-copy">
+                        <h2>Brew</h2>
+                        <p>A brewing curve is automatically computed for the perfect brew timing.</p>
                     </div>
-                </figure>
-                <figure>
-                    <div class="watch-case">
-                        <img src="screenshots/next-brew.png" alt="Gonglitea next brew screen with suggested time and one-second adjustments" width="416" height="496" loading="lazy" />
+                </article>
+                <article class="app-feature-card">
+                    <a class="app-feature-image" href="screenshots/repeat.png" target="_blank" rel="noopener noreferrer" aria-label="View full resolution: Repeat" title="View full resolution">
+                        <img src="screenshots/repeat.png" alt="Gonglitea next brew screen with an adjustable interval between brews" width="416" height="496" loading="lazy" />
+                    </a>
+                    <div class="app-feature-copy">
+                        <h2>Repeat</h2>
+                        <p>Between each brew, you may adjust the interval to your taste. The curve gets updated.</p>
                     </div>
-                </figure>
+                </article>
+                <article class="app-feature-card">
+                    <a class="app-feature-image" href="screenshots/switch.png" target="_blank" rel="noopener noreferrer" aria-label="View full resolution: Switch" title="View full resolution">
+                        <img src="screenshots/switch.png" alt="Gonglitea saved sessions available to resume" width="416" height="496" loading="lazy" />
+                    </a>
+                    <div class="app-feature-copy">
+                        <h2>Switch</h2>
+                        <p>You can stop a session and resume another at your convenience.</p>
+                    </div>
+                </article>
             </section>
 
             <section class="steep-explorer" aria-labelledby="explorer-title">

@@ -390,3 +390,17 @@
         gap: 34px;
     }
 }
+
+.gonglitea-features {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.gonglitea-features .app-feature-card {
+    grid-template-columns: minmax(0, min(36%, 200px)) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(14px, 4vw, 32px);
+}
+
+.gonglitea-features .app-feature-image {
+    border-radius: 20%;
+}
