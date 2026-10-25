@@ -6,11 +6,13 @@
         <meta name="color-scheme" content="light dark" />
         <meta name="description" content="Squeaky Systems. Explore my apps Pernolay and Gonglitea." />
         <title>Squeaky Systems</title>
-        <link rel="stylesheet" href="styles.css?v=10" />
+        <link rel="stylesheet" href="styles.css?v=14" />
+        <link rel="stylesheet" href="apps.css?v=28" />
+        <script src="site.js?v=3" defer></script>
     </head>
     <body>
         <main class="home-page">
-            <h1>Squeaky<br />Systems</h1>
+            <h1 aria-label="Squeaky Systems">Squeaky<br />System<span class="brand-mark">s</span></h1>
             <section class="home-apps" aria-label="Apps">
                 <nav aria-label="Apps">
                     <ul class="app-cards">
@@ -19,7 +21,7 @@
                                 <img src="pernolay/icon-cork.png" width="64" height="64" alt="" />
                                 <div>
                                     <h3>Pernolay</h3>
-                                    <p>Manage your wine cellar.</p>
+                                    <p>No-nonsense wine cellar manager.</p>
                                 </div>
                             </a>
                         </li>
@@ -28,13 +30,18 @@
                                 <img src="gonglitea/icon.png" width="64" height="64" alt="" />
                                 <div>
                                     <h3>Gonglitea</h3>
-                                    <p>Gong fu brewing timer, mathematically correct.</p>
+                                    <p>Smart gong fu brewing timer.</p>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </section>
+            <footer class="app-footer home-footer">
+                <p>&copy; <span data-current-year>2026</span> Squeaky Systems / François Bouvard<br />
+                    All Rights Reserved<br />
+                    Font by <a href="https://ia.net/writer">iA Writer</a></p>
+            </footer>
         </main>
     </body>
 </html>

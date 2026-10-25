@@ -396,11 +396,15 @@
 }
 
 .gonglitea-features .app-feature-card {
-    grid-template-columns: minmax(0, min(36%, 200px)) minmax(0, 1fr);
+    grid-template-columns: minmax(0, min(25.2%, 140px)) minmax(0, 1fr);
     align-items: center;
     gap: clamp(14px, 4vw, 32px);
+    border: 0;
 }
 
 .gonglitea-features .app-feature-image {
-    border-radius: 20%;
+    /* Match the display's continuous curve at every rendered screenshot size. */
+    border-radius: 0;
+    -webkit-mask: url("gonglitea/watch-display-mask.svg") center / 100% 100% no-repeat;
+    mask: url("gonglitea/watch-display-mask.svg") center / 100% 100% no-repeat;
 }

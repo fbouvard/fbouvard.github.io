@@ -23,7 +23,7 @@
 .steep-explorer button:hover { background: var(--explorer-soft); }
 .steep-explorer :is(input, button, summary):focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .steep-explorer input[aria-invalid="true"] { border-color: var(--explorer-accent); }
-.steep-explorer .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.steep-explorer .actions { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px; }
 .steep-explorer #error { width: 100%; margin: 0; font-size: 0.85rem; color: var(--explorer-accent); }
 .steep-explorer #error:empty { display: none; }
 .steep-explorer .chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin: 18px 20px 0; font-size: 0.8rem; color: var(--muted); }
@@ -46,7 +46,7 @@
 .steep-explorer td input { width: 85px; padding: 5px; margin: 0; }
 .steep-explorer td button { padding: 4px 8px; font-size: 1rem; }
 .steep-explorer .overridden td:first-child { color: var(--explorer-accent); font-weight: 700; }
-.steep-explorer .below { display: grid; gap: 30px; max-width: 560px; margin: 38px 0 0; }
+.steep-explorer .below { display: grid; gap: 30px; min-width: 0; margin: 38px 0 0; }
 .steep-explorer .note h3 { margin-top: 6px; font-size: 1.45rem; }
 .steep-explorer .note p { margin: 12px 0; color: var(--muted); }
 .steep-explorer .formula { overflow-x: auto; padding: 14px 16px; margin: 18px 0; background: var(--explorer-soft); border-radius: 4px; font-size: 1.1rem; }
@@ -59,6 +59,7 @@
 
 @media (prefers-color-scheme: dark) {
     .steep-explorer { --explorer-accent: #dfaa79; }
+    .steep-explorer .formula { background: #1c1c1c; }
 }
 
 @media (max-width: 640px) {

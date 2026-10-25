@@ -138,6 +138,47 @@ a:focus-visible {
     margin-top: 40px;
 }
 
+.home-page .home-footer {
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 0;
+}
+
+.brand-mark::before {
+    transform-origin: left center;
+    animation: duck-bill-upper 5s infinite;
+}
+
+.brand-mark::after {
+    transform-origin: left center;
+    animation: duck-bill-lower 5s infinite;
+}
+
+@keyframes duck-bill-upper {
+    0%, 88%, 93.3333%, 94.6667%, 100% {
+        transform: rotate(-40deg);
+    }
+    90%, 91.3333%, 96.6667%, 98% {
+        transform: translateY(0.2em) rotate(0deg);
+    }
+}
+
+@keyframes duck-bill-lower {
+    0%, 88%, 93.3333%, 94.6667%, 100% {
+        transform: rotate(15deg);
+    }
+    90%, 91.3333%, 96.6667%, 98% {
+        transform: translate(-0.04em, -0.2em) rotate(0deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-mark::before,
+    .brand-mark::after {
+        animation: none;
+    }
+}
+
 .home-apps h2 {
     margin: 0 0 12px;
     font-size: 1.125rem;

@@ -7,10 +7,10 @@
         <meta name="color-scheme" content="light dark" />
         <meta name="description" content="Gonglitea is a gong fu tea timer for Apple Watch. Time successive steeps, adjust each brew, and return to your tea session whenever you like." />
         <title>Gonglitea — Squeaky Systems</title>
-        <link rel="stylesheet" href="../styles.css?v=10" />
-        <link rel="stylesheet" href="../apps.css?v=25" />
-        <link rel="stylesheet" href="steep-explorer.css?v=3" />
-        <script src="steep-explorer.js?v=1" defer></script>
+        <link rel="stylesheet" href="../styles.css?v=14" />
+        <link rel="stylesheet" href="../apps.css?v=28" />
+        <link rel="stylesheet" href="steep-explorer.css?v=6" />
+        <script src="steep-explorer.js?v=3" defer></script>
         <script src="../site.js?v=3" defer></script>
     </head>
     <body class="app-site">
@@ -45,7 +45,7 @@
                         <img src="screenshots/start.png" alt="Gonglitea start screen with brewing time and offset selectors" width="416" height="496" loading="lazy" />
                     </a>
                     <div class="app-feature-copy">
-                        <h2>Start</h2>
+                        <h2>1. Start</h2>
                         <p>Set the first brew time and additional time for the next one.</p>
                     </div>
                 </article>
@@ -54,7 +54,7 @@
                         <img src="screenshots/brew.png" alt="Gonglitea brewing screen with the computed timing curve and countdown" width="416" height="496" loading="lazy" />
                     </a>
                     <div class="app-feature-copy">
-                        <h2>Brew</h2>
+                        <h2>2. Brew</h2>
                         <p>A brewing curve is automatically computed for the perfect brew timing.</p>
                     </div>
                 </article>
@@ -63,7 +63,7 @@
                         <img src="screenshots/repeat.png" alt="Gonglitea next brew screen with an adjustable interval between brews" width="416" height="496" loading="lazy" />
                     </a>
                     <div class="app-feature-copy">
-                        <h2>Repeat</h2>
+                        <h2>3. Repeat</h2>
                         <p>Between each brew, you may adjust the interval to your taste. The curve gets updated.</p>
                     </div>
                 </article>
@@ -72,7 +72,7 @@
                         <img src="screenshots/switch.png" alt="Gonglitea saved sessions available to resume" width="416" height="496" loading="lazy" />
                     </a>
                     <div class="app-feature-copy">
-                        <h2>Switch</h2>
+                        <h2>4. Switch</h2>
                         <p>You can stop a session and resume another at your convenience.</p>
                     </div>
                 </article>
@@ -80,18 +80,17 @@
 
             <section class="steep-explorer" aria-labelledby="explorer-title">
 
-            <header class="explorer-intro"><div><h2 id="explorer-title">The rhythm of each steep.</h2><p>A simple compounding schedule, with room to adjust by taste. Explore the curve, then make it yours.</p></div></header>
+            <header class="explorer-intro"><div><h2 id="explorer-title">The rhythm of each brew.</h2><p>A simple compounding schedule, with room to adjust by taste. Explore the curve, then make it yours.</p></div></header>
             <section class="panel" aria-label="Interactive steep timing explorer">
-            <div class="controls"><label>Initial time t₀ · seconds<br><input id="initial" type="number" min="0.1" max="3600" step="any" value="25"></label><label>First increment Δ · seconds<br><input id="increment" type="number" min="0" max="3600" step="any" value="5"></label><label>Number of brews<br><input id="count" type="number" min="1" max="60" step="1" value="8"></label><div class="actions"><button id="example">Load 40 s example</button><button id="reset">Reset overrides</button></div><p id="error" role="alert"></p></div>
+            <div class="controls"><label>Initial time t₀ · seconds<br><input id="initial" type="number" min="0.1" max="3600" step="any" value="25"></label><label>First increment Δ · seconds<br><input id="increment" type="number" min="0" max="3600" step="any" value="5"></label><div class="actions"><button id="example">Load 40 s example</button><button id="reset">Reset overrides</button></div><p id="error" role="alert"></p></div>
             <div class="chart-head"><div class="legend"><span>Original</span><span>Adjusted</span></div><span id="ratio"></span></div>
             <div class="chart-wrap"><svg id="chart" viewBox="0 0 960 290" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Original and adjusted steep times</title><desc id="chart-desc">Select an adjusted point to focus its override input. Exact values are available in the table below.</desc></svg></div>
             <p id="status" aria-live="polite"></p>
             <div class="schedule"><div class="schedule-head"><h3>Your brew schedule</h3><span class="hint">Enter a time to override · clear it to follow the curve</span></div><div class="table-wrap"><table><thead><tr><th scope="col">Brew</th><th scope="col">Original · s</th><th scope="col">Adjusted · s</th><th scope="col">Override · s</th><th scope="col">Offset · s</th><th scope="col"><span aria-label="Clear override">↺</span></th></tr></thead><tbody id="rows"></tbody></table></div></div>
             </section>
-            <div class="below"><section class="note"><div class="eyebrow">01 / Build the curve</div><h3>One ratio. Growing increments.</h3><p>Index brews from <b>n = 0</b>, so the third brew is n = 2. If the first time is t₀ and the next is t₀ + Δ, a fixed multiplier gives r = (t₀ + Δ) / t₀.</p><div class="formula">b<sub>n</sub> = t₀ (1 + Δ/t₀)<sup>n</sup> = t₀ r<sup>n</sup><br><small>Original rule: t<sub>n</sub> = b<sub>n</sub> before any overrides.</small></div><p>With t₀ = 25 s and Δ = 5 s, r = 1.2. The sequence is <b>25, 30, 36, 43.2, 51.84, … seconds</b>.</p><details><summary>Why the increases compound</summary><p>Start with b₀ = t₀ and b<sub>n+1</sub> = rb<sub>n</sub>. Repeated substitution yields b<sub>n</sub> = t₀rⁿ. Thus b<sub>n+1</sub> − b<sub>n</sub> = t₀rⁿ(r − 1) = Δrⁿ: the increases are 5, 6, 7.2, 8.64, … seconds.</p><p>The mathematical sequence extends indefinitely. Usable tea extraction does not.</p></details></section>
-            <section class="note"><div class="eyebrow">02 / Adjust by taste</div><h3>Shift the future, keep the shape.</h3><p>At an overridden brew k, compare your chosen time T<sub>k</sub> with the current prediction b<sub>k</sub> + S<sub>k−1</sub>. Add that difference to the persistent offset.</p><div class="formula">δ<sub>k</sub> = T<sub>k</sub> − (b<sub>k</sub> + S<sub>k−1</sub>)<br>S<sub>k</sub> = S<sub>k−1</sub> + δ<sub>k</sub> &nbsp;·&nbsp; t<sub>n</sub> = b<sub>n</sub> + S<sub>n</sub></div><p>Start with S<sub>−1</sub> = 0. Without an override, S<sub>n</sub> = S<sub>n−1</sub>. Choosing <b>40 s instead of 36 s</b> on brew 3 adds 4 s: <b>25, 30, 40, 47.2, 55.84, …</b></p><details><summary>Multiple overrides, in chronological order</summary><p>S<sub>n</sub> = Σ<sub>k≤n</sub> δ<sub>k</sub>, summing only override events. Each correction is relative to the already adjusted prediction. If brew 5 is then set to 60 s, δ₄ = 60 − 55.84 = 4.16 s; the total offset becomes 8.16 s. Brew 6 is 62.208 + 8.16 = 70.368 s.</p><p>Between overrides, t<sub>n+1</sub> − t<sub>n</sub> = Δrⁿ. Each segment is a vertical translation of the base curve; an override can introduce a jump. Equivalently, the latest override sets S<sub>k</sub> = T<sub>k</sub> − b<sub>k</sub>. Earlier edits never change a later explicitly entered time.</p><p>Changing t₀ or Δ keeps entered overrides as absolute times and recomputes corrections. Reducing the brew count discards overrides outside the new range.</p></details></section></div>
-            <aside class="caveat"><strong>A timing heuristic, not an extraction law.</strong> Two starting times do not identify tea’s extraction or depletion dynamics. The exponential rule assumes a fixed time multiplier; a constant vertical shift is a convenient scheduling adjustment, not a physically accurate extraction/depletion model. Temperature, leaf opening, water volume, pouring, and remaining soluble compounds can change the result. Use taste to guide adjustments; these formulas cannot promise equal strength or infinitely many useful infusions.</aside>
-            <footer><span>Times rounded for display; calculations use full precision.</span></footer>
+            <div class="below"><section class="note"><h3>Compounding increases.</h3><p>Your initial brew time t₀ and first increment Δ set the pace. Each brew time grows by the same percentage, so the extra time added between brews gradually increases.</p><div class="formula">b<sub>n</sub> = t₀ (1 + Δ/t₀)<sup>n</sup><br><small>n starts at 0 for the first brew.</small></div></section>
+            <section class="note"><h3>Shift the future, keep the shape.</h3><p>When you change a brew time, the difference shifts all following brew times by the same amount. The compounding increases stay the same until your next adjustment.</p><div class="formula">S = T<sub>k</sub> − b<sub>k</sub><br>t<sub>n</sub> = b<sub>n</sub> + S &nbsp;·&nbsp; n ≥ k<br><small>T<sub>k</sub> is your chosen time for brew k. S is the offset applied from that brew until the next adjustment; it starts at 0.</small></div></section></div>
+
 
             </section>
         </main>
