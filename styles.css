@@ -154,6 +154,12 @@ a:focus-visible {
     animation: duck-bill-lower 5s infinite;
 }
 
+.brand-mark::before,
+.brand-mark::after {
+    /* Skip 3.4s of the initial idle period so movement begins after 1s. */
+    animation-delay: -3.4s;
+}
+
 @keyframes duck-bill-upper {
     0%, 88%, 93.3333%, 94.6667%, 100% {
         transform: rotate(-40deg);
