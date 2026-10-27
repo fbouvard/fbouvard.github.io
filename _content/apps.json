@@ -22,7 +22,7 @@
     "name": "Gonglitea",
     "icon": { "src": "icon.png", "width": 1088, "height": 1088 },
     "tagline": "Gong fu brewing timer, mathematically correct.",
-    "release_status": "Coming soon to the App Store.",
+    "app_store_url": "https://apps.apple.com/app/id6818762609",
     "pages": {
       "overview": {
         "description": "Gonglitea is a gong fu tea timer for Apple Watch. Time successive steeps, adjust each brew, and return to your tea session whenever you like.",
